@@ -1,10 +1,13 @@
 import Button from "../../../../compoments/button/Button";
 import Checkbox from "../../../../compoments/checkbox/Checkbox";
 
-function TodoItem() {
+function TodoItem({ todoItem, handleChangeCheckBox }) {
   return (
     <div>
-      <Checkbox></Checkbox>
+      <Checkbox
+        todoItem={todoItem}
+        handleChangeCheckBox={handleChangeCheckBox}
+      />
       <Button></Button>
     </div>
   );
