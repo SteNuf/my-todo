@@ -1,14 +1,29 @@
 import Button from "../../../../compoments/button/Button";
 import Checkbox from "../../../../compoments/checkbox/Checkbox";
 
-function TodoItem({ todoItem, handleChangeCheckBox }) {
+function TodoItem({ todoItem, handleChangeCheckBox, deleteTodoItemFromList }) {
+  function handleDeleteTodoItem() {
+    deleteTodoItemFromList(todoItem.id);
+  }
+
+  function handleChangeCheckBoxEvent(event) {
+    const updatedTodoItem = { ...todoItem };
+    updatedTodoItem.done = event.target.checked;
+    handleChangeCheckBox(updatedTodoItem);
+  }
+
   return (
     <div>
       <Checkbox
-        todoItem={todoItem}
-        handleChangeCheckBox={handleChangeCheckBox}
+        id={todoItem.id}
+        checked={todoItem.done}
+        content={todoItem.content}
+        handleChangeCheckBox={handleChangeCheckBoxEvent}
       />
-      <Button></Button>
+      <Button
+        buttonValue={"Löschen"}
+        handleButtonClickEvent={handleDeleteTodoItem}
+      />
     </div>
   );
 }
