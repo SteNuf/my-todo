@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ToDoBody from "../todobody/TodoBody";
 import TodoHeader from "../todoheader/TodoHeader";
+import "./TodoList.css";
 
 function TodoList({}) {
   const [todos, setTodos] = useState([
@@ -32,7 +33,7 @@ function TodoList({}) {
   }
 
   return (
-    <div>
+    <div class="todo-list">
       <TodoHeader addTodoItemToList={addTodoItemToList} />
       <ToDoBody
         todos={todos}

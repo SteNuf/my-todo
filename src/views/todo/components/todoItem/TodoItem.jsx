@@ -1,5 +1,6 @@
 import Button from "../../../../compoments/button/Button";
 import Checkbox from "../../../../compoments/checkbox/Checkbox";
+import "./TodoItem.css";
 
 function TodoItem({ todoItem, handleChangeCheckBox, deleteTodoItemFromList }) {
   function handleDeleteTodoItem() {
@@ -13,7 +14,7 @@ function TodoItem({ todoItem, handleChangeCheckBox, deleteTodoItemFromList }) {
   }
 
   return (
-    <div>
+    <div class="todo-item">
       <Checkbox
         id={todoItem.id}
         checked={todoItem.done}
