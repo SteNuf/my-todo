@@ -3,18 +3,16 @@ import ToDoBody from "../todobody/TodoBody";
 import TodoHeader from "../todoheader/TodoHeader";
 import "./TodoList.css";
 
-function TodoList({}) {
+function TodoList() {
   const [todos, setTodos] = useState([
-    { id: Math.random(), content: "Wäsche waschen", done: true },
+    { id: Math.random(), content: "", done: true },
   ]);
 
   function handleChangeCheckBox(todoItem) {
     const todoItemIndex = todos.findIndex((todo) => todo.id === todoItem.id);
-    console.log(todoItemIndex);
     const updatedTodos = [...todos];
-    console.log(updatedTodos);
+
     updatedTodos.splice(todoItemIndex, 1, todoItem);
-    console.log(updatedTodos);
 
     setTodos(updatedTodos);
   }
